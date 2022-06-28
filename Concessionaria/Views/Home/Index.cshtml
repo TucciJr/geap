@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RelatorioComissao>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Relatório de Vendas e Comissões por Vendedor</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome do Vendedor
+            </th>
+            <th>
+                Quantidade de veículos vendidos
+            </th>
+            <th>
+                Quantidade de vales combustíveis emitidos
+            </th>
+            <th>
+                Total em vendas
+            </th>
+            <th>
+                Total em comissão
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Vendedor
+            </td>
+            <td>
+                @item.QuantidadeVendas
+            </td>
+            <td>
+                @item.QuantidadeVales
+            </td>
+            <td>
+                @item.TotalVendas
+            </td>
+            <td>
+                @item.TotalFinalComissao
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
